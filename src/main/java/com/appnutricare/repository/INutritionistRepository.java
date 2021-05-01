@@ -7,9 +7,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface INutritionistRepository extends JpaRepository<Nutritionist, Long> {
-    public Nutritionist findByEmail(String email);
+public interface INutritionistRepository extends JpaRepository<Nutritionist, Integer> {
+    public Nutritionist findByUsername(String dni);
+    public Nutritionist findByCnpNumber(String dni);
+    public List<Nutritionist> findByFirstName(String firstname);
     public List<Nutritionist> findByLastName(String lastname);
-    public List<Nutritionist> findByFirstName(String lastname);
     public List<Nutritionist> findByFirstNameAndLastName(String firstname, String lastname);
 }
