@@ -24,7 +24,7 @@ public class NutritionistServiceImpl implements INutritionistService {
 
     @Override
     @Transactional
-    public void delete(int id) throws Exception {
+    public void delete(Integer id) throws Exception {
         nutritionistRepository.deleteById(id);
     }
 
@@ -34,7 +34,7 @@ public class NutritionistServiceImpl implements INutritionistService {
     }
 
     @Override
-    public Optional<Nutritionist> getById(int id) throws Exception {
+    public Optional<Nutritionist> getById(Integer id) throws Exception {
         return nutritionistRepository.findById(id);
     }
 
@@ -44,7 +44,7 @@ public class NutritionistServiceImpl implements INutritionistService {
     }
 
     @Override
-    public Nutritionist findByCnpNumber(String cnp_number) throws Exception {
+    public Nutritionist findByCnpNumber(Integer cnp_number) throws Exception {
         return nutritionistRepository.findByCnpNumber(cnp_number);
     }
 

@@ -36,7 +36,7 @@ public class Nutritionist implements Serializable {
     @Column(name="email", nullable = false, length = 50)
     private String email;
 
-    @Column(name="cnp_umber", nullable = false, length = 6)
+    @Column(name="cnp_number", nullable = false, length = 6)
     private Integer cnpNumber;
 
     @Column(name="created_at", nullable = false)
