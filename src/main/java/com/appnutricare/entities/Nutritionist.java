@@ -6,28 +6,39 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-
 import java.util.Date;
 
 @Entity
-@Table(name = "client")
+@Table(name="nutritionist")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Client implements Serializable {
+public class Nutritionist implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "username", nullable = false, length = 16)
+
+    //Falta professional profile id (int)
+
+    @Column(name="username", nullable = false, length = 16)
     private String username;
-    @Column(name = "password", nullable = false, length = 60)
+
+    @Column(name="password", nullable = false, length = 50)
     private String password;
-    @Column(name="firstname", nullable = false, length = 50)
+
+    @Column(name="first_name", nullable = false, length = 50)
     private String firstName;
-    @Column(name="lastname", nullable = false, length = 50)
+
+    @Column(name="last_name", nullable = false, length = 50)
     private String lastName;
+
     @Column(name="email", nullable = false, length = 50)
     private String email;
+
+    @Column(name="cnp_number", nullable = false, length = 6)
+    private Integer cnpNumber;
+
     @Column(name="created_at", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
