@@ -15,6 +15,6 @@ public interface IRecipeRepository extends JpaRepository<Recipe, Long> {
     //Optional<Recipe> findAllByNutri(Integer nutri);
     //Optional<Recipe> findById(Integer id);
 
-    //public List<Recipe> findAllByNutritionist(Long nutritionist);
+    public List<Recipe> findAllByNutritionist(Integer nutritionist);
     public Optional<Recipe> findRecipeById(Integer id);
 }
