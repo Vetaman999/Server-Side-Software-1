@@ -111,7 +111,7 @@ public class RecipeController {
             @ApiResponse(code=200, message = "Datos de Recipe eliminados"),
             @ApiResponse(code=404, message = "Recipe no encontrado")
     })
-    public ResponseEntity<Recipe> deleteBooking(@PathVariable("id") z| id){
+    public ResponseEntity<Recipe> deleteBooking(@PathVariable("id") Integer id){
         try{
             Optional<Recipe> bookingDelete = recipeService.getById(id);
             if(bookingDelete.isPresent()){
