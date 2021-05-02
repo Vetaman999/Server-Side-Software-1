@@ -12,9 +12,9 @@ import java.util.Optional;
 public interface IRecipeRepository extends JpaRepository<Recipe, Long> {
     //Aqui utilizo los Optional porque la busqueda ya esta predeterminada por el ID.
 
-    //Optional<Recipe> findAllByNutri(Long nutri);
-    //Optional<Recipe> findById(Long id);
+    //Optional<Recipe> findAllByNutri(Integer nutri);
+    //Optional<Recipe> findById(Integer id);
 
     //public List<Recipe> findAllByNutritionist(Long nutritionist);
-    public Optional<Recipe> findRecipeById(Long id);
+    public Optional<Recipe> findRecipeById(Integer id);
 }

@@ -20,7 +20,7 @@ public class Recipe implements Serializable {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+        private Integer id;
         @Column(name="name", nullable = false, length = 50)
         private String name;
         @Column(name="descripcion", nullable = false, length = 250)

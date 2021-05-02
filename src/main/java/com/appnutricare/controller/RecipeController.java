@@ -48,7 +48,7 @@ public class RecipeController {
             @ApiResponse(code=201, message = "recipe encontrado"),
             @ApiResponse(code=404, message = "recipe no encontrado")
     })
-    public ResponseEntity<Recipe>findRecipeById(@PathVariable("id") Long id){
+    public ResponseEntity<Recipe>findRecipeById(@PathVariable("id") Integer id){
         try{
             Optional<Recipe> booking= recipeService.getById(id);
             if(!booking.isPresent())
@@ -67,7 +67,7 @@ public class RecipeController {
             @ApiResponse(code=201, message = "Booking creado"),
             @ApiResponse(code=404, message = "Booking no creado")
     })
-    public ResponseEntity<Recipe> insertRecipe(@PathVariable("id") Long id, @Valid @RequestBody Booking booking){
+    public ResponseEntity<Recipe> insertRecipe(@PathVariable("id") Integer id, @Valid @RequestBody Booking booking){
         try{
             Optional<Nutri> nutri = nutriservice.getById(id);
             if(nutri.isPresent()){
@@ -90,7 +90,7 @@ public class RecipeController {
             @ApiResponse(code=200, message = "Datos de Recipe actualizados"),
             @ApiResponse(code=404, message = "REcipe no encontrado")
     })
-    public ResponseEntity<Recipe> updateBooking(@PathVariable("id") Long id, @Valid @RequestBody Recipe recipe){
+    public ResponseEntity<Recipe> updateBooking(@PathVariable("id") Integer id, @Valid @RequestBody Recipe recipe){
         try{
             Optional<Recipe> bookingOld = recipeService.getById(id);
             if(!bookingOld.isPresent())
@@ -111,7 +111,7 @@ public class RecipeController {
             @ApiResponse(code=200, message = "Datos de Recipe eliminados"),
             @ApiResponse(code=404, message = "Recipe no encontrado")
     })
-    public ResponseEntity<Recipe> deleteBooking(@PathVariable("id") Long id){
+    public ResponseEntity<Recipe> deleteBooking(@PathVariable("id") Integer id){
         try{
             Optional<Recipe> bookingDelete = recipeService.getById(id);
             if(bookingDelete.isPresent()){

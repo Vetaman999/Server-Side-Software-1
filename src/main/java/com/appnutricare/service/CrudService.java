@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface CrudService<T>{
     T save(T t) throws Exception;   //actualizar o crear
-    void delete(long id) throws Exception;
+    void delete(Integer id) throws Exception;
     List<T> getAll() throws Exception;
-    Optional<T> getById(Long id) throws Exception;
+    Optional<T> getById(Integer id) throws Exception;
 }
