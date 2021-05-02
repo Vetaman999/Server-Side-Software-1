@@ -36,13 +36,9 @@ public class Recipe implements Serializable {
         @Column(name="last_modification", nullable = false)
         private Date last_modification;
 
-
-
         //Implementacion de FK - el many to one con nutritionist
-    /*
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="Nutritionist_id", nullable = false)
-    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-    private Nutritionist nutritionist;
-     */
+        @ManyToOne(fetch = FetchType.LAZY)
+        @JoinColumn(name="Nutritionist_id", nullable = false)
+        @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+        private Nutritionist nutritionist;
 }

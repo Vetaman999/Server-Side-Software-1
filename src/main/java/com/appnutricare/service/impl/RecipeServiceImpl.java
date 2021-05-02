@@ -41,7 +41,7 @@ public class RecipeServiceImpl implements IRecipeService {
     }
 
     @Override
-    public List<Recipe> findAllByNutritionist(Long nutritionist) throws Exception {
-        return null;
+    public List<Recipe> findAllByNutritionist(Integer nutritionist) throws Exception {
+        return recipeRepository.findAllByNutritionist(nutritionist);
     }
 }

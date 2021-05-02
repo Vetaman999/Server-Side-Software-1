@@ -1,6 +1,8 @@
 package com.appnutricare.controller;
 
+import com.appnutricare.entities.Nutritionist;
 import com.appnutricare.entities.Recipe;
+import com.appnutricare.service.INutritionistService;
 import com.appnutricare.service.IRecipeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -24,8 +26,11 @@ public class RecipeController {
     @Autowired
     private IRecipeService recipeService;
 
+    @Autowired
+    private INutritionistService nutritionistService;
+
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Listar Bookings", notes="Método para listar todos los bookings")
+    @ApiOperation(value = "Listar Recipe", notes="Método para listar todos los recipe")
     @ApiResponses({
             @ApiResponse(code=201, message = "recipe encontrados"),
             @ApiResponse(code=404, message = "recipe no encontrados")
@@ -60,18 +65,18 @@ public class RecipeController {
         }
     }
 
-    /*
+
     @PostMapping(value ="/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Registro de un Recipe de un Customer", notes ="Método que registra un booking" )
     @ApiResponses({
             @ApiResponse(code=201, message = "Booking creado"),
             @ApiResponse(code=404, message = "Booking no creado")
     })
-    public ResponseEntity<Recipe> insertRecipe(@PathVariable("id") Integer id, @Valid @RequestBody Booking booking){
+    public ResponseEntity<Recipe> insertRecipe(@PathVariable("id") Integer id, @Valid @RequestBody Recipe recipe){
         try{
-            Optional<Nutri> nutri = nutriservice.getById(id);
-            if(nutri.isPresent()){
-                recipe.setNutri(nutri.get());
+            Optional<Nutritionist> nutritionist = nutritionistService.getById(id);
+            if(nutritionist.isPresent()){
+                recipe.setNutritionist(nutritionist.get());
                 Recipe recipeNew = recipeService.save(recipe);
                 return ResponseEntity.status(HttpStatus.CREATED).body(recipeNew);
             }
@@ -81,7 +86,7 @@ public class RecipeController {
             return new ResponseEntity<Recipe>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    */
+
 
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
