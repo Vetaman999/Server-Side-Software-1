@@ -30,7 +30,7 @@ public class RecipeController {
     private INutritionistService nutritionistService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Listar Bookings", notes="Método para listar todos los bookings")
+    @ApiOperation(value = "Listar Recipe", notes="Método para listar todos los recipe")
     @ApiResponses({
             @ApiResponse(code=201, message = "recipe encontrados"),
             @ApiResponse(code=404, message = "recipe no encontrados")
