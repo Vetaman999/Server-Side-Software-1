@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/AppNutricare
+    url: jdbc:postgresql://localhost:5432/PruebaAqui
     username: postgres
-    password: 123
+    password: 12345
     driver-class-name: org.postgresql.Driver
   jpa:
     database: postgresql

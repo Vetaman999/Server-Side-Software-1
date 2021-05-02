@@ -10,41 +10,38 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+
 @Service
 @Transactional(readOnly = true)
 public class RecipeServiceImpl implements IRecipeService {
 
     @Autowired
-    private IRecipeRepository recipeService;
+    private IRecipeRepository recipeRepository;
 
     @Override
+    @Transactional
     public Recipe save(Recipe recipe) throws Exception {
-        return recipeService.save(recipe);
+        return recipeRepository.save(recipe);
     }
 
     @Override
     @Transactional
     public void delete(long id) throws Exception {
-        recipeService.findById(id);
+        recipeRepository.findById(id);
     }
 
     @Override
     public List<Recipe> getAll() throws Exception {
-        return recipeService.findAll();
+        return recipeRepository.findAll();
     }
 
     @Override
     public Optional<Recipe> getById(Long id) throws Exception {
-        return recipeService.findById(id);
+        return recipeRepository.findRecipeById(id);
     }
 
     @Override
-    public List<Recipe> findAllByNutri(Long nutri) throws Exception {
-        return null;
-    }
-
-    @Override
-    public List<Recipe> findById(Long id) throws Exception {
+    public List<Recipe> findAllByNutritionist(Long nutritionist) throws Exception {
         return null;
     }
 }

@@ -15,7 +15,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@NamedQuery(name="Customer.findByFirstName",query = "select  c from Recipe c where c.name= ?1")
+@NamedQuery(name="Customer.findByFirstName",query = "select  r from Recipe r where r.name= ?1")
 public class Recipe implements Serializable {
 
         @Id
@@ -36,11 +36,13 @@ public class Recipe implements Serializable {
         @Column(name="last_modification", nullable = false)
         private Date last_modification;
 
+
+
         //Implementacion de FK - el many to one con nutritionist
-        /*
-        @ManyToOne(fetch = FetchType.LAZY)
-        @JoinColumn(name="Nutritionist_id", nullable = false)
-        @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-        private Nutritionist nutritionist;
-         */
+    /*
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="Nutritionist_id", nullable = false)
+    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+    private Nutritionist nutritionist;
+     */
 }
