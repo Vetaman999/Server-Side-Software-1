@@ -22,13 +22,13 @@ public class Client implements Serializable {
     private String username;
     @Column(name = "password", nullable = false, length = 60)
     private String password;
-    @Column(name = "firstname", nullable = false, length = 50)
+    @Column(name="firstname", nullable = false, length = 50)
     private String firstName;
-    @Column(name = "lastname", nullable = false, length = 50)
+    @Column(name="lastname", nullable = false, length = 50)
     private String lastName;
-    @Column(name = "email", nullable = false, length = 50)
+    @Column(name="email", nullable = false, length = 50)
     private String email;
-    @Column(name = "created_at", nullable = false)
+    @Column(name="created_at", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 }
